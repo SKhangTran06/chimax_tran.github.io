@@ -1,252 +1,176 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chimax's Website</title>
-    <style>
-        /* General Styles */
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            line-height: 1.6;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chimax's Website</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      scroll-behavior: smooth;
+    }
 
-        header {
-            background: #333;
-            color: #fff;
-            padding: 1rem 0;
-            text-align: center;
-        }
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: #333;
+      color: #fff;
+      padding: 10px 0;
+      z-index: 1000;
+    }
 
-        header h1 {
-            margin: 0;
-        }
+    header nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      padding: 0;
+      margin: 0;
+    }
 
-        nav {
-            display: flex;
-            justify-content: center;
-            gap: 1rem;
-        }
+    header nav ul li {
+      margin: 0 15px;
+    }
 
-        nav a {
-            color: #007bff;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 1rem;
-            transition: color 0.3s ease;
-        }
+    header nav ul li a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+    }
 
-        nav a:hover {
-            color: #0056b3;
-        }
+    .hero {
+      height: 100vh;
+      background: url('https://i.imgur.com/aBHX0UV.jpeg') no-repeat center center/cover;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      color: #fff;
+      text-align: center;
+    }
 
-        /* Hero Section */
-        .hero {
-            position: relative;
-            background: url('https://i.imgur.com/dyvsN0f.jpeg') no-repeat center center/cover;
-            color: #fff;
-            height: 90vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-        }
+    .hero img {
+      border-radius: 50%;
+      width: 200px;
+      height: 200px;
+      border: 5px solid #fff;
+    }
 
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.5); /* Dark overlay for better readability */
-            z-index: 1;
-        }
+    section {
+      padding: 50px 20px;
+    }
 
-        .hero h2,
-        .hero p,
-        .hero img {
-            position: relative;
-            z-index: 2;
-        }
+    section h2 {
+      text-align: center;
+      margin-bottom: 30px;
+    }
 
-        .hero img {
-            width: 300px;
-            height: 300px;
-            border-radius: 50%;
-            margin-top: 1rem;
-            border: 3px solid #fff;
-            object-fit: cover;
-        }
+    #projects {
+      background: #f9f9f9;
+    }
 
-        /* About Section */
-        #about {
-            padding: 2rem;
-            background: #f4f4f4;
-            text-align: center;
-        }
+    .projects-container {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+    }
 
-        #about h2 {
-            font-size: 2rem;
-            margin-bottom: 1rem;
-        }
+    .project-card {
+      width: 30%;
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      padding: 20px;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
 
-        #about p {
-            max-width: 600px;
-            margin: 0 auto;
-            line-height: 1.6;
-            color: #555;
-        }
+    .project-card h3 {
+      font-size: 18px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
 
-        /* Projects Section */
-        #projects {
-            padding: 2rem;
-            background: #fff;
-            text-align: center;
-        }
+    .project-card p {
+      font-size: 14px;
+      color: #555;
+    }
 
-        #projects h2 {
-            font-size: 2rem;
-            margin-bottom: 1rem;
-        }
+    #cv {
+      background: #f1f1f1;
+      text-align: center;
+    }
 
-        #projects p {
-            max-width: 600px;
-            margin: 0 auto;
-            line-height: 1.6;
-            color: #555;
-        }
+    #cv a {
+      display: inline-block;
+      padding: 10px 20px;
+      background: #007bff;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 5px;
+      margin-top: 10px;
+    }
 
-        /* CV Section */
-        #cv {
-            padding: 2rem;
-            background: #f4f4f4;
-            text-align: center;
-        }
-
-        #cv h2 {
-            font-size: 2rem;
-            margin-bottom: 1rem;
-        }
-
-        #cv p {
-            max-width: 600px;
-            margin: 0 auto 2rem;
-            line-height: 1.6;
-            color: #555;
-        }
-
-        .cv-button {
-            display: inline-block;
-            padding: 0.75rem 1.5rem;
-            background: #007bff;
-            color: #fff;
-            border: none;
-            border-radius: 5px;
-            font-size: 1rem;
-            text-decoration: none;
-            font-weight: bold;
-            transition: background-color 0.3s ease;
-        }
-
-        .cv-button:hover {
-            background: #0056b3;
-            cursor: pointer;
-        }
-
-        /* Contact Section */
-        #contact {
-            padding: 2rem;
-            background: #fff;
-            text-align: center;
-        }
-
-        #contact h2 {
-            font-size: 2rem;
-            margin-bottom: 1rem;
-        }
-
-        #contact p {
-            max-width: 600px;
-            margin: 0 auto;
-            line-height: 1.6;
-            color: #555;
-        }
-
-        footer {
-            background: #333;
-            color: #fff;
-            text-align: center;
-            padding: 1rem 0;
-        }
-    </style>
+    footer {
+      background: #333;
+      color: #fff;
+      text-align: center;
+      padding: 10px 0;
+    }
+  </style>
 </head>
 <body>
-    <!-- Header -->
-    <header>
-        <h1>Welcome to Chimax's Website</h1>
-        <nav>
-            <a href="#about">About</a>
-            <a href="#projects">Projects</a>
-            <a href="#cv">CV</a>
-            <a href="#contact">Contact</a>
-        </nav>
-    </header>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#cv">CV</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div>
-            <h2>Hello, I'm Chimax</h2>
-            <p>A web enthusiast passionate about building amazing things on the web!</p>
-            <img src="https://i.imgur.com/P6FHD9b.jpeg" alt="Picture of Chimax">
-        </div>
-    </section>
+  <div class="hero">
+    <h1>Hello, I'm Chimax</h1>
+    <p>A web enthusiast passionate about building amazing things on the web!</p>
+    <img src="https://i.imgur.com/P6FHD9b.jpeg" alt="Profile Picture">
+  </div>
 
-    <!-- About Section -->
-    <section id="about">
-        <h2>About Me</h2>
-        <p>I am a passionate developer who loves to explore new technologies and create amazing things on the web.</p>
-    </section>
+  <section id="about">
+    <h2>About Me</h2>
+    <p>I am a passionate developer who loves to explore new technologies and create amazing things on the web.</p>
+  </section>
 
-    <!-- Projects Section -->
-    <section id="projects">
-        <h2>Projects</h2>
-        <p>Here are some of my recent projects. Stay tuned for more!</p>
-    </section>
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="projects-container">
+      <div class="project-card">
+        <h3>Project One</h3>
+        <p>A brief description of Project One goes here. It showcases something awesome.</p>
+      </div>
+      <div class="project-card">
+        <h3>Project Two</h3>
+        <p>A brief description of Project Two goes here. It highlights your skills.</p>
+      </div>
+      <div class="project-card">
+        <h3>Project Three</h3>
+        <p>A brief description of Project Three goes here. It demonstrates creativity.</p>
+      </div>
+    </div>
+  </section>
 
-    <!-- CV Section -->
-    <section id="cv">
-        <h2>My CV</h2>
-        <p>Here is a brief overview of my professional experience and skills. For a detailed view, feel free to download my CV below.</p>
-        <a href="your-cv-link.pdf" download class="cv-button">Download My CV</a>
-    </section>
+  <section id="cv">
+    <h2>My CV</h2>
+    <p>Here is a brief overview of my professional experience and skills. For a detailed view, feel free to download my CV below.</p>
+    <a href="your-cv-link.pdf" download>Download My CV</a>
+  </section>
 
-    <!-- Contact Section -->
-    <section id="contact">
-        <h2>Contact</h2>
-        <p>If you’d like to collaborate or have any questions, feel free to reach out!</p>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2024 Chimax's Website. All rights reserved.</p>
-    </footer>
-
-    <script>
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('nav a').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const targetSection = document.querySelector(this.getAttribute('href'));
-                targetSection.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
-            });
-        });
-    </script>
+  <footer>
+    <p>&copy; 2024 Chimax. All rights reserved.</p>
+  </footer>
 </body>
 </html>
