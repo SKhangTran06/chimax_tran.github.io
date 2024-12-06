@@ -212,10 +212,72 @@
     </section>
 
     <!-- Projects Section -->
-    <section id="projects">
-        <h2>Projects</h2>
-        <p>Here are some of my recent projects. Stay tuned for more!</p>
-    </section>
+    <!-- Projects section styles -->
+<section id="projects">
+  <h2>Projects</h2>
+  <p>Here are some of my recent projects. Stay tuned for more!</p>
+  <div class="projects-container">
+    <div class="project">
+      <h3>Project 1</h3>
+      <p>A brief description of the first project goes here.</p>
+    </div>
+    <div class="project">
+      <h3>Project 2</h3>
+      <p>A brief description of the second project goes here.</p>
+    </div>
+    <div class="project">
+      <h3>Project 3</h3>
+      <p>A brief description of the third project goes here.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CSS for Projects Section -->
+<style>
+  #projects {
+    padding: 50px;
+    text-align: center;
+  }
+
+  #projects h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+  }
+
+  #projects p {
+    font-size: 1.2em;
+    margin-bottom: 40px;
+  }
+
+  .projects-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    margin-top: 20px;
+  }
+
+  .project {
+    flex: 1;
+    padding: 15px;
+    text-align: center;
+    background: #f8f9fa;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  .project h3 {
+    font-weight: bold;
+    font-size: 1.2em;
+    margin-bottom: 10px;
+  }
+
+  .project p {
+    font-size: 0.9em;
+    color: #555;
+  }
+</style>
+
 
     <!-- CV Section -->
     <section id="cv">
