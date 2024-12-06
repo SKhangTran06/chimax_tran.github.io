@@ -3,118 +3,162 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Welcome to Chimax's personal website!">
-    <title>Welcome to Chimax's Website</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
+    <title>Chimax's Website</title>
     <style>
-        /* Global Styles */
-        * {
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
-            font-family: 'Poppins', sans-serif;
-            scroll-behavior: smooth;
-        }
-        body {
             line-height: 1.6;
-            color: #333;
         }
-        a {
-            text-decoration: none;
-            color: #007bff;
-        }
-        a:hover {
-            color: #0056b3;
-        }
-        /* Header */
+
         header {
-            background-color: #333;
+            background: #333;
             color: #fff;
             padding: 1rem 0;
             text-align: center;
         }
+
         header h1 {
-            font-size: 2.5rem;
+            margin: 0;
         }
+
         nav {
-            margin-top: 1rem;
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
         }
+
         nav a {
-            margin: 0 1rem;
-            font-weight: 700;
+            color: #007bff;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1rem;
+            transition: color 0.3s ease;
         }
+
+        nav a:hover {
+            color: #0056b3;
+        }
+
         /* Hero Section */
         .hero {
-            background: url('https://source.unsplash.com/1600x900/?nature,technology') no-repeat center center/cover;
-            height: 80vh;
+            background: #282c34;
+            color: #fff;
+            height: 90vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            color: #fff;
             text-align: center;
-        }
-        .hero img {
-            width: 300px; /* Increase the width */
-            height: 300px; /* Increase the height */
-            border-radius: 50%; /* Keep the circular shape */
-            margin-top: 1rem;
-            border: 3px solid #fff;
-            object-fit: cover; /* Ensure the image scales proportionally */
         }
 
-        .hero h2 {
-            font-size: 3rem;
-        }
-        .hero p {
-            font-size: 1.2rem;
+        .hero img {
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
             margin-top: 1rem;
+            border: 3px solid #fff;
+            object-fit: cover;
         }
+
         /* About Section */
-        .about {
+        #about {
             padding: 2rem;
+            background: #f4f4f4;
             text-align: center;
         }
-        .about h2 {
+
+        #about h2 {
             font-size: 2rem;
             margin-bottom: 1rem;
         }
-        .about p {
+
+        #about p {
             max-width: 600px;
             margin: 0 auto;
-            line-height: 1.8;
+            line-height: 1.6;
+            color: #555;
         }
+
         /* Projects Section */
-        .projects {
-            background: #f9f9f9;
+        #projects {
             padding: 2rem;
-        }
-        .projects h2 {
+            background: #fff;
             text-align: center;
+        }
+
+        #projects h2 {
+            font-size: 2rem;
             margin-bottom: 1rem;
         }
-        .project-list {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1.5rem;
+
+        #projects p {
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+            color: #555;
         }
-        .project {
-            background: #fff;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            padding: 1rem;
+
+        /* CV Section */
+        #cv {
+            padding: 2rem;
+            background: #f4f4f4;
             text-align: center;
         }
-        .project img {
-            max-width: 100%;
+
+        #cv h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        #cv p {
+            max-width: 600px;
+            margin: 0 auto 2rem;
+            line-height: 1.6;
+            color: #555;
+        }
+
+        .cv-button {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            background: #007bff;
+            color: #fff;
+            border: none;
             border-radius: 5px;
+            font-size: 1rem;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
         }
-        .project h3 {
-            margin: 1rem 0;
+
+        .cv-button:hover {
+            background: #0056b3;
+            cursor: pointer;
         }
-        /* Footer */
+
+        /* Contact Section */
+        #contact {
+            padding: 2rem;
+            background: #fff;
+            text-align: center;
+        }
+
+        #contact h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        #contact p {
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+            color: #555;
+        }
+
         footer {
-            background-color: #333;
+            background: #333;
             color: #fff;
             text-align: center;
             padding: 1rem 0;
@@ -128,6 +172,7 @@
         <nav>
             <a href="#about">About</a>
             <a href="#projects">Projects</a>
+            <a href="#cv">CV</a>
             <a href="#contact">Contact</a>
         </nav>
     </header>
@@ -137,45 +182,38 @@
         <div>
             <h2>Hello, I'm Chimax</h2>
             <p>A web enthusiast passionate about building amazing things on the web!</p>
-            <!-- Replace 'your-image.jpg' with the URL of your image -->
-            <img src="https://i.imgur.com/P6FHD9b.jpeg" alt="A picture of myself">
+            <img src="https://i.imgur.com/P6FHD9b.jpeg" alt="Picture of Chimax">
         </div>
     </section>
 
     <!-- About Section -->
-    <section id="about" class="about">
+    <section id="about">
         <h2>About Me</h2>
-        <p>
-            Hi! I'm Chimax, a creative web developer with a love for crafting clean, responsive, and user-friendly websites.
-            Whether it's designing a stunning portfolio or building a complex application, I'm always up for the challenge!
-        </p>
+        <p>I am a passionate developer who loves to explore new technologies and create amazing things on the web.</p>
     </section>
 
     <!-- Projects Section -->
-    <section id="projects" class="projects">
-        <h2>My Projects</h2>
-        <div class="project-list">
-            <div class="project">
-                <img src="https://source.unsplash.com/300x200/?project" alt="Project Image">
-                <h3>Project One</h3>
-                <p>Project description goes here. Add a brief overview of what this project is about.</p>
-            </div>
-            <div class="project">
-                <img src="https://source.unsplash.com/300x200/?portfolio" alt="Project Image">
-                <h3>Project Two</h3>
-                <p>Project description goes here. Add a brief overview of what this project is about.</p>
-            </div>
-            <div class="project">
-                <img src="https://source.unsplash.com/300x200/?technology" alt="Project Image">
-                <h3>Project Three</h3>
-                <p>Project description goes here. Add a brief overview of what this project is about.</p>
-            </div>
-        </div>
+    <section id="projects">
+        <h2>Projects</h2>
+        <p>Here are some of my recent projects. Stay tuned for more!</p>
+    </section>
+
+    <!-- CV Section -->
+    <section id="cv">
+        <h2>My CV</h2>
+        <p>Here is a brief overview of my professional experience and skills. For a detailed view, feel free to download my CV below.</p>
+        <a href="your-cv-link.pdf" download class="cv-button">Download My CV</a>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2>Contact</h2>
+        <p>If you’d like to collaborate or have any questions, feel free to reach out!</p>
     </section>
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2024 Chimax | Built with ❤️ and GitHub Pages</p>
+        <p>&copy; 2024 Chimax's Website. All rights reserved.</p>
     </footer>
 
     <script>
