@@ -3,44 +3,179 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome to My GitHub Page</title>
+    <meta name="description" content="Welcome to Chimax's personal website!">
+    <title>Welcome to Chimax's Website</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            background-color: #f4f4f4;
+        /* Global Styles */
+        * {
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
         }
+        body {
+            line-height: 1.6;
+            color: #333;
+        }
+        a {
+            text-decoration: none;
+            color: #007bff;
+        }
+        a:hover {
+            color: #0056b3;
+        }
+        /* Header */
         header {
-            background-color: #4CAF50;
-            color: white;
-            padding: 20px 0;
+            background-color: #333;
+            color: #fff;
+            padding: 1rem 0;
+            text-align: center;
         }
-        h1 {
-            margin: 0;
+        header h1 {
+            font-size: 2.5rem;
         }
-        p {
-            margin: 20px;
-            font-size: 1.2em;
+        nav {
+            margin-top: 1rem;
         }
+        nav a {
+            margin: 0 1rem;
+            font-weight: 700;
+        }
+        /* Hero Section */
+        .hero {
+            background: url('https://source.unsplash.com/1600x900/?nature,technology') no-repeat center center/cover;
+            height: 80vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+            text-align: center;
+        }
+        .hero h2 {
+            font-size: 3rem;
+        }
+        .hero p {
+            font-size: 1.2rem;
+            margin-top: 1rem;
+        }
+        .btn {
+            background-color: #007bff;
+            color: #fff;
+            padding: 0.8rem 1.5rem;
+            border: none;
+            border-radius: 5px;
+            margin-top: 1.5rem;
+            cursor: pointer;
+        }
+        .btn:hover {
+            background-color: #0056b3;
+        }
+        /* About Section */
+        .about {
+            padding: 2rem;
+            text-align: center;
+        }
+        .about h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+        .about p {
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+        /* Projects Section */
+        .projects {
+            background: #f9f9f9;
+            padding: 2rem;
+        }
+        .projects h2 {
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+        .project-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+        .project {
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 1rem;
+            text-align: center;
+        }
+        .project img {
+            max-width: 100%;
+            border-radius: 5px;
+        }
+        .project h3 {
+            margin: 1rem 0;
+        }
+        /* Footer */
         footer {
             background-color: #333;
-            color: white;
-            padding: 10px 0;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
+            color: #fff;
+            text-align: center;
+            padding: 1rem 0;
         }
     </style>
 </head>
 <body>
+    <!-- Header -->
     <header>
-        <h1>Welcome to My GitHub Page</h1>
+        <h1>Welcome to Chimax's Website</h1>
+        <nav>
+            <a href="#about">About</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+        </nav>
     </header>
-    <p>This is a simple website hosted using GitHub Pages. You can add more content as needed!</p>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div>
+            <h2>Hello, I'm Chimax</h2>
+            <p>A web enthusiast passionate about building amazing things on the web!</p>
+            <button class="btn">Explore My Work</button>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <h2>About Me</h2>
+        <p>
+            Hi! I'm Chimax, a creative web developer with a love for crafting clean, responsive, and user-friendly websites.
+            Whether it's designing a stunning portfolio or building a complex application, I'm always up for the challenge!
+        </p>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <h2>My Projects</h2>
+        <div class="project-list">
+            <div class="project">
+                <img src="https://source.unsplash.com/300x200/?project" alt="Project Image">
+                <h3>Project One</h3>
+                <p>Project description goes here. Add a brief overview of what this project is about.</p>
+            </div>
+            <div class="project">
+                <img src="https://source.unsplash.com/300x200/?portfolio" alt="Project Image">
+                <h3>Project Two</h3>
+                <p>Project description goes here. Add a brief overview of what this project is about.</p>
+            </div>
+            <div class="project">
+                <img src="https://source.unsplash.com/300x200/?technology" alt="Project Image">
+                <h3>Project Three</h3>
+                <p>Project description goes here. Add a brief overview of what this project is about.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
     <footer>
-        <p>&copy; 2024 Your Name</p>
+        <p>&copy; 2024 Chimax | Built with ❤️ and GitHub Pages</p>
     </footer>
 </body>
 </html>
